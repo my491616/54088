@@ -30,9 +30,13 @@ h1{
 .sl{font-size:.6em;color:#888;letter-spacing:1px;text-transform:uppercase;}
 .sv{font-size:1.38em;font-weight:bold;color:#ffd700;transition:transform .15s,color .15s;}
 .sv.bump{color:#ff8800;transform:scale(1.4);}
-#wrap{position:relative;}
+#wrap{
+  position:relative;
+  width:min(640px, calc(100vw - 16px));
+}
 canvas{
   display:block;border-radius:12px;cursor:crosshair;
+  width:100%;height:auto;
   box-shadow:0 0 36px rgba(100,50,220,.52),0 0 70px rgba(100,50,220,.18);
 }
 body.fever canvas{box-shadow:0 0 50px rgba(255,40,0,.75);}
@@ -61,6 +65,18 @@ body.fever canvas{box-shadow:0 0 50px rgba(255,40,0,.75);}
 #bB{background:linear-gradient(135deg,#ff4444,#cc0000);color:#fff;box-shadow:0 3px 12px rgba(220,0,0,.4);}
 #bS{background:linear-gradient(135deg,#44aaff,#0066cc);color:#fff;box-shadow:0 3px 12px rgba(0,100,255,.4);}
 #hint{color:#555;font-size:.68em;}
+
+/* ── 手機響應式 ─────────────────────────── */
+@media(max-width:480px){
+  h1{font-size:1.25em;letter-spacing:2px;margin-bottom:6px;}
+  #stats{gap:8px;padding:6px 10px;}
+  .st{min-width:50px;}
+  .sv{font-size:1.1em;}
+  .sl{font-size:.55em;}
+  #ctrl{gap:8px;margin-top:7px;}
+  .btn{font-size:.78em;padding:9px 13px;}
+  #hint{display:none;}
+}
 #ov{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
   background:rgba(0,0,0,.92);border:3px solid #ffd700;border-radius:16px;
